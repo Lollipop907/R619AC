@@ -3,7 +3,7 @@
 #   Author: Lollipop907
 #=================================================
 
-name: Build R619AC
+name: Build R619AC-Simple
 
 on: 
   release:
