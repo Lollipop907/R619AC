@@ -1,9 +1,9 @@
 #=================================================
-#   Description: Build G-DOCK FROM LEAN'S LEDE
-#   Author: JK
+#   Description: Build R619AC FROM LEAN'S LEDE
+#   Author: Lollipop907
 #=================================================
 
-name: Build G-DOCK
+name: Build R619AC
 
 on: 
   release:
@@ -60,7 +60,7 @@ jobs:
 
     - name: Load custom configuration
       run: |
-        cp -f gdockfull128.config ./lede/.config
+        cp -f r619ac.config ./lede/.config
         chmod +x diy.sh
         cd lede
         ../diy.sh
@@ -82,5 +82,5 @@ jobs:
     - name : Upload artifact
       uses: actions/upload-artifact@master
       with:
-        name: G-DOCK
+        name: R619AC
         path: ./lede/bin
