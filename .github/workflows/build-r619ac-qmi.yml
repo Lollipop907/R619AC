@@ -3,7 +3,7 @@
 #   Author: Lollipop907
 #=================================================
 
-name: Build P&W R619AC With Qualcomm Modem interface
+name: Build P&W R619AC With Qualcomm Modem Interface
 
 on: 
   release:
