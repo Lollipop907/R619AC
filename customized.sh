@@ -22,8 +22,8 @@ cp -f ../luci feeds/luci/modules/luci-base/root/etc/config/
 #echo '下载ServerChan'
 #git clone https://github.com/tty228/luci-app-serverchan ../diy/luci-app-serverchan
 
-echo '加载驱动'
-ln -s ../../devices ./package/openwrt-packages
+#echo '加载驱动'
+#ln -s ../../devices ./package/openwrt-packages
 
 
 
