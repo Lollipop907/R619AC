@@ -3,7 +3,7 @@
 #   Author: Lollipop907
 #=================================================
 
-name: Build R619AC-Simple
+name: Build P&W R619AC With Download Tool
 
 on: 
   release:
@@ -60,10 +60,10 @@ jobs:
 
     - name: Load custom configuration
       run: |
-        cp -f gdock.config ./lede/.config
-        chmod +x diy.sh
+        cp -f r619ac-dl.config ./lede/.config
+        chmod +x customized.sh
         cd lede
-        ../diy.sh
+        ../customized.sh
         make defconfig
 
     - name: Download package
@@ -82,5 +82,5 @@ jobs:
     - name : Upload artifact
       uses: actions/upload-artifact@master
       with:
-        name: R619AC
+        name: R619AC-DL
         path: ./lede/bin
