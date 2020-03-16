@@ -3,7 +3,7 @@
 #   Author: Lollipop907
 #=================================================
 
-name: Build P&W R619AC With Qualcomm Modem Interface
+name: Build P&W R619AC Openwrt 19.07
 
 on: 
   release:
@@ -60,7 +60,7 @@ jobs:
 
     - name: Load custom configuration
       run: |
-        cp -f r619ac-qmi.config ./lede/.config
+        cp -f r619ac.config ./lede/.config
         chmod +x customized.sh
         cd lede
         ../customized.sh

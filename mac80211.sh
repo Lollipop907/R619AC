@@ -105,6 +105,12 @@ detect_mac80211() {
 		else
 			dev_id="set wireless.radio${devidx}.macaddr=$(cat /sys/class/ieee80211/${dev}/macaddress)"
 		fi
+		
+		if [ x$mode_band == x"a" ]; then
+			ssid_5ghz="-5G"
+		else
+			ssid_5ghz=""
+		fi
 
 		uci -q batch <<-EOF
 			set wireless.radio${devidx}=wifi-device
@@ -119,7 +125,7 @@ detect_mac80211() {
 			set wireless.default_radio${devidx}.device=radio${devidx}
 			set wireless.default_radio${devidx}.network=lan
 			set wireless.default_radio${devidx}.mode=ap
-			set wireless.default_radio${devidx}.ssid=P2W-R619AC_$(cat /sys/class/ieee80211/${dev}/macaddress|awk -F ":" '{print $4""$5""$6 }'| tr a-z A-Z)
+			set wireless.default_radio${devidx}.ssid=P2W-R619AC${ssid_5ghz}_$(cat /sys/class/ieee80211/${dev}/macaddress|awk -F ":" '{print $4""$5""$6 }'| tr a-z A-Z)
 			set wireless.default_radio${devidx}.encryption=none
 EOF
 		uci -q commit wireless
