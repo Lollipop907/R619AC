@@ -82,5 +82,5 @@ jobs:
     - name : Upload artifact
       uses: actions/upload-artifact@master
       with:
-        name: R619AC-QMI
+        name: R619AC
         path: ./lede/bin
